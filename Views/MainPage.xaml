@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TecnologicoApp.ViewModels"
+             x:Class="TecnologicoApp.Views.MainPage">
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20">
+        <Entry Placeholder="First Number" Keyboard="Numeric" Text="{Binding FirstNumber}" />
+        <Entry Placeholder="Second Number" Keyboard="Numeric" Text="{Binding SecondNumber}" />
+
+        <Button Text="Sum" Command="{Binding CalculateCommand}" CommandParameter="Sum" />
+        <Button Text="Subtract" Command="{Binding CalculateCommand}" CommandParameter="Subtract" />
+        <Button Text="Multiply" Command="{Binding CalculateCommand}" CommandParameter="Multiply" />
+        <Button Text="Divide" Command="{Binding CalculateCommand}" CommandParameter="Divide" />
+
+        <Label Text="{Binding Result}" />
+    </StackLayout>
+</ContentPage>
